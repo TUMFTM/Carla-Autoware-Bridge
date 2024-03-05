@@ -92,7 +92,7 @@ Additional information:
 ### 3) Autoware
 To use Autoware some minor [adjustments](/doc/autoware-changes.md) are required. Additionally you will need our sensorkit and vehicle model.
 ```
-https://github.com/TUMFTM/Carla_t2.git
+git clone https://github.com/TUMFTM/Carla_t2.git
 ```
 
 Launch autoware
