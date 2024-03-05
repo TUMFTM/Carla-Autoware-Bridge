@@ -101,4 +101,6 @@ https://github.com/autowarefoundation/autoware/tree/v1.0
 
 ```bash
 docker pull ghcr.io/autowarefoundation/autoware-universe:humble-1.0-cuda
+
+rocker --network=host -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e LIBGL_ALWAYS_SOFTWARE=1 --x11 --nvidia --volume /path/to/code -- ghcr.io/autowarefoundation/autoware-universe:humble-1.0-cuda
 ```
