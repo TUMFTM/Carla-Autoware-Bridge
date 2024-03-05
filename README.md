@@ -17,7 +17,7 @@ The CARLA-Autoware-Bridge is a package to connect the CARLA simulator to Autowar
 If you use this or the other associated repos, please cite our Paper:
 
 **CARLA-Autoware-Bridge: Facilitating Autonomous Driving Research
-with a Unified Framework for Simulation and Module Development**<br>Gemb Kaljavesi, Tobias Kerbl, Tobias Betz, Kirill Mitkovskii, Frank Diermeyer [[PDF]()]
+with a Unified Framework for Simulation and Module Development**<br>Gemb Kaljavesi, Tobias Kerbl, Tobias Betz, Kirill Mitkovskii, Frank Diermeyer [[PDF](https://arxiv.org/abs/2402.11239)]
 
 ```
 @inproceedings{carla_aw_bridge24,
