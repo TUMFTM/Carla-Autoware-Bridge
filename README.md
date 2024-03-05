@@ -9,6 +9,9 @@
 
 ## Introduction
 The CARLA-Autoware-Bridge is a package to connect the CARLA simulator to Autoware Core/Universe with the help of the CARLA-ROS-Bridge. Currently the **latest Autoware Core/Universe** and **CARLA 0.9.15** is supported.
+### Youtube Quickstart
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OmnMnvz949Y/3.jpg)](https://youtu.be/OmnMnvz949Y)
+
 
 ## Paper
 If you use this or the other associated repos, please cite our Paper:
