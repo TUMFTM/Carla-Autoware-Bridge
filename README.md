@@ -116,3 +116,8 @@ docker pull ghcr.io/autowarefoundation/autoware-universe:humble-1.0-cuda
 
 rocker --network=host -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e LIBGL_ALWAYS_SOFTWARE=1 --x11 --nvidia --volume /path/to/code -- ghcr.io/autowarefoundation/autoware-universe:humble-1.0-cuda
 ```
+
+## Limitations and Future Work
+- We are currently working on making traffic light detection possible, at least for Town10HD
+- Autoware is a map-based approach and some maps may not allow some positions to be reached or some lane changes may not be possible. We are continuously trying to improve our map conversion
+- We aim to enhance future efficiency by ensuring that the bridge is Python-free, utilizing native DDS connection with the CARLA simulator
