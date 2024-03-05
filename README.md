@@ -90,7 +90,11 @@ Additional information:
 - `-tm_port=8000` to switch the traffic manager server port to a different one (8000 by default)
 
 ### 3) Autoware
-To use Autoware some minor [adjustments](/doc/autoware-changes.md) are required.
+To use Autoware some minor [adjustments](/doc/autoware-changes.md) are required. Additionally you will need our sensorkit and vehicle model.
+```
+https://github.com/TUMFTM/Carla_t2.git
+```
+
 Launch autoware
 ```bash
 ros2 launch autoware_launch e2e_simulator.launch.xml vehicle_model:=carla_t2_vehicle sensor_model:=carla_t2_sensor_kit map_path:=<path to /wsp/map>
