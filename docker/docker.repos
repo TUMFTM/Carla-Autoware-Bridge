@@ -1,0 +1,26 @@
+# carla
+repositories:
+  carla/ros-bridge:
+    type: git
+    url: https://github.com/TUMFTM/ros-bridge.git
+    version: master
+  carla/astuff_sensor_msgs:
+    type: git
+    url: https://github.com/astuff/astuff_sensor_msgs.git
+    version: master
+  autoware_auto_msgs:
+    type: git
+    url: https://github.com/tier4/autoware_auto_msgs.git
+    version: e1795354161ed54d66659366262578863bd2b862
+  autoware_common:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_common.git
+    version: cfd19eb5ef60061ca1394b21d75346a0faa87f2c
+  autoware_msgs:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_msgs.git
+    version: c2a82f3126b97fc911ba8cdd44682790b6265319
+
+
+
+    
