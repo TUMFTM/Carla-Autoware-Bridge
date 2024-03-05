@@ -89,6 +89,11 @@ Additional information:
 - `-traffic_manager=False` to turn off traffic manager server (True by default)
 - `-tm_port=8000` to switch the traffic manager server port to a different one (8000 by default)
 
+If you want to spawn traffic run the following script inside the docker:
+```
+python3 src/carla_autoware_bridge/utils/generate_traffic.py -p 14.03
+```
+
 ### 3) Autoware
 To use Autoware some minor [adjustments](/doc/autoware-changes.md) are required. Additionally you will need our sensorkit and vehicle model.
 ```
