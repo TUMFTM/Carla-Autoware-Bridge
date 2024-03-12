@@ -111,12 +111,12 @@ ros2 launch autoware_launch e2e_simulator.launch.xml vehicle_model:=carla_t2_veh
 ```
 
 Autoware changes often, for a reproducible behaviour we recommend you to use a tagged autoware version:
-https://github.com/autowarefoundation/autoware/tree/v1.0
+https://github.com/autowarefoundation/autoware/tree/2024.01
 
 ```bash
-docker pull ghcr.io/autowarefoundation/autoware-universe:humble-1.0-cuda
+docker pull ghcr.io/autowarefoundation/autoware-universe:humble-2024.01-cuda-amd64
 
-rocker --network=host -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e LIBGL_ALWAYS_SOFTWARE=1 --x11 --nvidia --volume /path/to/code -- ghcr.io/autowarefoundation/autoware-universe:humble-1.0-cuda
+rocker --network=host -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e LIBGL_ALWAYS_SOFTWARE=1 --x11 --nvidia --volume /path/to/code -- ghcr.io/autowarefoundation/autoware-universe:humble-2024.01-cuda-amd64
 ```
 
 ## Limitations and Future Work
