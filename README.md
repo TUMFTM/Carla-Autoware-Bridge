@@ -96,7 +96,7 @@ Additional information:
 
 If you want to spawn traffic run the following script inside the docker:
 ```
-python3 src/carla_autoware_bridge/utils/generate_traffic.py -p 14.03
+python3 src/carla_autoware_bridge/utils/generate_traffic.py -p 1403
 ```
 
 ### 3) Autoware
