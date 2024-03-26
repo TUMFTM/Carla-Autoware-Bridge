@@ -56,7 +56,7 @@ docker pull tumgeka/carla-autoware-bridge:latest
 Comming Soon. Until then, take a look at our Dockerfile.
 
 #### Maps
-Autoware needs the maps in a special lanelet2 format, we will upload all converted maps in the future under the following link: [carla-autoware-bridge/maps](https://syncandshare.lrz.de/getlink/fiCzVPnWWS4eGXLK8MwZNy/)
+Autoware needs the maps in a special lanelet2 format, we will upload all converted maps in the future under the following link: [carla-autoware-bridge/maps](https://syncandshare.lrz.de/getlink/fiBgYSNkmsmRB28meoX3gZ/)
 
 ## General Installation and Usage
 The installation and usage of the CARLA-Autoware-Bridge is described in the following tutourial. In order to function properly the packages should be started in the order CARLA --> CARLA-Autoware-Bridge --> Autoware. 
