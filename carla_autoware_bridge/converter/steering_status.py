@@ -29,8 +29,8 @@ class SteeringStatusConverter(Converter):
         max_left_steer = -1
         max_right_steer = 1
 
-        fl_max_left_angle = -48.99
-        fr_max_left_angle = -35.077
+        fl_max_left_angle = -69.99
+        fr_max_left_angle = -47.95
         average_max_left_angle = -(fl_max_left_angle + fr_max_left_angle) / 2
         average_max_left_angle = np.radians(average_max_left_angle)
         average_max_right_angle = -average_max_left_angle
