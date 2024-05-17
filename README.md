@@ -100,10 +100,7 @@ python3 src/carla_autoware_bridge/utils/generate_traffic.py -p 1403
 ```
 
 ### 3) Autoware
-To use Autoware some minor [adjustments](/doc/autoware-changes.md) are required. Additionally you will need our sensorkit and vehicle model.
-```
-git clone https://github.com/TUMFTM/Carla_t2.git
-```
+First, see [Autoware installation](doc/autoware_installation.md).
 
 Launch autoware
 ```bash
