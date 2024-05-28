@@ -87,12 +87,12 @@ ros2 launch carla_autoware_bridge carla_aw_bridge.launch.py port:=1403 town:=Tow
 ```
 
 Additional information:
-- `-port:=3000` to switch to a different CARLA port for it's RPC port
-- `-timeout:=10` to increase waiting time of loading a CARLA town before raising error
-- `-view:=true` to show third-person-view window
-- `-town:=Town10HD` to set the town
-- `-traffic_manager=False` to turn off traffic manager server (True by default)
-- `-tm_port=8000` to switch the traffic manager server port to a different one (8000 by default)
+- `port:=3000` to switch to a different CARLA port for it's RPC port
+- `timeout:=10` to increase waiting time of loading a CARLA town before raising error
+- `view:=true` to show third-person-view window
+- `town:=Town10HD` to set the town
+- `traffic_manager=False` to turn off traffic manager server (True by default)
+- `tm_port=8000` to switch the traffic manager server port to a different one (8000 by default)
 
 If you want to spawn traffic run the following script inside the docker:
 ```
