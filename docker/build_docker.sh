@@ -4,6 +4,7 @@
 HUBNAME="tumgeka"
 TAG="latest"
 NAME="carla-autoware-bridge" 
+NO_CACHE=""
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -18,6 +19,10 @@ while [[ $# -gt 0 ]]; do
             TAG="$2"
             shift # past argument
             shift # past value
+            ;;
+        --no-cache)
+            NO_CACHE="--no-cache"
+            shift # past argument
             ;;
         --help)
             usage
@@ -34,4 +39,4 @@ PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 
 echo "Building the CARLA-Autoware-Bridge Dockerfile"
 
-docker build -f $SCRIPT_DIR/Dockerfile --tag $HUBNAME/$NAME:$TAG $PARENT_DIR
+docker build -f $SCRIPT_DIR/Dockerfile --tag $HUBNAME/$NAME:$TAG $NO_CACHE $PARENT_DIR
