@@ -28,8 +28,7 @@ RUN apt-get update && apt install software-properties-common -y \
   && apt install ros-humble-rmw-cyclonedds-cpp -y \
   && pip install -U colcon-common-extensions  \
   && DEBIAN_FRONTEND=noninteractive \
-  && curl https://syncandshare.lrz.de/dl/fiGEM2D9CSnoGfSNkJcMsH/carla-0.9.15-cp310-cp310-linux_x86_64.whl > carla-0.9.15-cp310-cp310-linux_x86_64.whl \
-  && pip install carla-0.9.15-cp310-cp310-linux_x86_64.whl \
+  && pip install carla==0.9.15 \
   && pip install simple-pid==1.0.1 \
   && pip install vcstool \
   && vcs import --recursive src < src/carla_autoware_bridge/docker/docker.repos \
