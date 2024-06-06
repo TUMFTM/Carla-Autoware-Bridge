@@ -98,8 +98,8 @@ class AutowareBridge(Node):
 
     def _control_callback(self, aw_ackermann_control_command_msg):
         carla_ackermann_control = AckermannDrive()
-        carla_ackermann_control.steering_angle = aw_ackermann_control_command_msg.lateral.steering_tire_angle * 1.2
-        carla_ackermann_control.steering_angle_velocity = aw_ackermann_control_command_msg.lateral.steering_tire_rotation_rate * 1.2
+        carla_ackermann_control.steering_angle = aw_ackermann_control_command_msg.lateral.steering_tire_angle
+        carla_ackermann_control.steering_angle_velocity = aw_ackermann_control_command_msg.lateral.steering_tire_rotation_rate
         carla_ackermann_control.speed = aw_ackermann_control_command_msg.longitudinal.speed
         carla_ackermann_control.acceleration = aw_ackermann_control_command_msg.longitudinal.acceleration
         carla_ackermann_control.jerk = aw_ackermann_control_command_msg.longitudinal.jerk
