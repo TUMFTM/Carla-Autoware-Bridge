@@ -15,7 +15,7 @@
 
 from ackermann_msgs.msg import AckermannDrive 
 from autoware_auto_control_msgs.msg import AckermannControlCommand
-from autoware_auto_vehicle_msgs.msg import SteeringReport, VelocityReport
+from autoware_auto_vehicle_msgs.msg import SteeringReport, VelocityReport, ControlModeReport
 from carla_autoware_bridge.converter.steering_status import SteeringStatusConverter
 from carla_autoware_bridge.converter.velocity_report import VelocityReportConverter
 from carla_msgs.msg import CarlaEgoVehicleControl, CarlaEgoVehicleStatus
@@ -43,6 +43,11 @@ class AutowareBridge(Node):
             self._vehicle_status_callback, qos.qos_profile_sensor_data)
         self._steering_status_publisher = self.create_publisher(
             SteeringReport, '/vehicle/status/steering_status', 1)
+        
+        # Publish a static control_mode
+        # Out Bridge is always in autonomous mode, this could be changed later
+        self._vehicle_control_mode_publisher = self.create_publisher(
+            ControlModeReport, '/vehicle/status/control_mode', 1)
         
         self._odometry_subscriber = self.create_subscription(
             Odometry, '/carla/ego_vehicle/odometry',
@@ -95,6 +100,14 @@ class AutowareBridge(Node):
         steering_status_msg = self._steering_status_converter.outbox
         steering_status_msg.stamp = self.get_clock().now().to_msg()
         self._steering_status_publisher.publish(steering_status_msg)
+
+        # Publish static contgrol mode
+        control_mode_msg = ControlModeReport()
+        control_mode_msg.stamp = self.get_clock().now().to_msg()
+        control_mode_msg.mode = 1
+        self._vehicle_control_mode_publisher.publish(control_mode_msg)
+
+
 
     def _control_callback(self, aw_ackermann_control_command_msg):
         carla_ackermann_control = AckermannDrive()
