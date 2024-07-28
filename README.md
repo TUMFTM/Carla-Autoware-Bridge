@@ -114,7 +114,7 @@ Autoware changes often, for a reproducible behaviour we recommend you to use a t
 https://github.com/autowarefoundation/autoware/tree/2024.01
 
 ```bash
-docker pull ghcr.io/autowarefoundation/autoware-universe:humble-2024.01-cuda-amd64
+docker pull ghcr.io/autowarefoundation/autoware:humble-2024.01-cuda-amd64
 
 rocker --network=host -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e LIBGL_ALWAYS_SOFTWARE=1 --x11 --nvidia --volume /path/to/code -- ghcr.io/autowarefoundation/autoware-universe:humble-2024.01-cuda-amd64
 ```
