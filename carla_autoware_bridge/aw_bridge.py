@@ -14,8 +14,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from ackermann_msgs.msg import AckermannDrive 
-from autoware_auto_control_msgs.msg import AckermannControlCommand
-from autoware_auto_vehicle_msgs.msg import SteeringReport, VelocityReport, ControlModeReport
+from autoware_control_msgs.msg import Control
+from autoware_vehicle_msgs.msg import SteeringReport, VelocityReport, ControlModeReport
 from carla_autoware_bridge.converter.steering_status import SteeringStatusConverter
 from carla_autoware_bridge.converter.velocity_report import VelocityReportConverter
 from carla_msgs.msg import CarlaEgoVehicleControl, CarlaEgoVehicleStatus
@@ -61,7 +61,7 @@ class AutowareBridge(Node):
         
         # Subscribe autoware ackermann control cmd and send to the PID
         self._ackermann_control_command_subscriber = self.create_subscription(
-            AckermannControlCommand, '/control/command/control_cmd',
+            Control, '/control/command/control_cmd',
             self._control_callback, qos.qos_profile_sensor_data)
         self._ackermann_pub = self.create_publisher(
             AckermannDrive, '/carla/ego_vehicle/ackermann_cmd', 1)
@@ -113,7 +113,7 @@ class AutowareBridge(Node):
         carla_ackermann_control = AckermannDrive()
         carla_ackermann_control.steering_angle = aw_ackermann_control_command_msg.lateral.steering_tire_angle * 1.2
         carla_ackermann_control.steering_angle_velocity = aw_ackermann_control_command_msg.lateral.steering_tire_rotation_rate * 1.2
-        carla_ackermann_control.speed = aw_ackermann_control_command_msg.longitudinal.speed
+        carla_ackermann_control.speed = aw_ackermann_control_command_msg.longitudinal.velocity
         carla_ackermann_control.acceleration = aw_ackermann_control_command_msg.longitudinal.acceleration
         carla_ackermann_control.jerk = aw_ackermann_control_command_msg.longitudinal.jerk
         self._ackermann_pub.publish(carla_ackermann_control)
