@@ -28,7 +28,7 @@ RUN apt-get update && apt install software-properties-common -y \
   && apt install ros-humble-rmw-cyclonedds-cpp -y \
   && pip install -U colcon-common-extensions  \
   && DEBIAN_FRONTEND=noninteractive \
-  && curl https://syncandshare.lrz.de/dl/fiGEM2D9CSnoGfSNkJcMsH/carla-0.9.15-cp310-cp310-linux_x86_64.whl > carla-0.9.15-cp310-cp310-linux_x86_64.whl \
+  && curl https://syncandshare.lrz.de/dl/fi4nuNEfq8zs7nWwuGxkvY/carla-0.9.15-cp310-cp310-linux_x86_64.whl > carla-0.9.15-cp310-cp310-linux_x86_64.whl \
   && pip install carla-0.9.15-cp310-cp310-linux_x86_64.whl \
   && pip install simple-pid==1.0.1 \
   && pip install vcstool \
