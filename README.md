@@ -7,6 +7,8 @@
 
 </div>
 
+Check out our newest Framework which supports scenario-based testing using autoware universe and Carla 0.9.16: https://github.com/TUMFTM/autoware_carla_leaderboard
+
 ## Introduction
 The CARLA-Autoware-Bridge is a package to connect the CARLA simulator to Autoware Core/Universe with the help of the CARLA-ROS-Bridge. Currently the **latest Autoware Core/Universe** and **CARLA 0.9.15** is supported.
 ### Youtube Demo Video + Quickstart
