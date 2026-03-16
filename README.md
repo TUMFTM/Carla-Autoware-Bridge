@@ -42,7 +42,7 @@ The simulation framework around the CARLA-Autoware-Bridge consists of the compon
 - carla-ros-msgs:  Fork of the carla-ros-msg with our changes needed for the CARLA-Autoware-Bridge.
 
 ## How to Build and Install the Bridge
-The easiest way to use the CARLA-Autoware-Bridge is to use our prebuilt docker image or to build the docker image by yourself. Bu we also provide a tutorial for local usage.
+The easiest way to use the CARLA-Autoware-Bridge is to use our prebuilt docker image or to build the docker image by yourself. But we also provide a tutorial for local usage.
 
 #### Docker Workflow(Recommended)
 You can build the docker image by yourself or use the image from our github registry.
@@ -55,8 +55,23 @@ docker pull tumgeka/carla-autoware-bridge:latest
 ```
 
 #### Local Workflow
-Comming Soon. Until then, take a look at our Dockerfile.
 
+Alternatively to docker, the package could also be used in your local machine, doing the follow steps:
+
+1. Create a ROS2 workspace and clone repo:
+
+```shell
+mkdir -p ros2_ws/src
+cd ros2_ws/src
+
+git clone https://github.com/TUMFTM/Carla-Autoware-Bridge.git
+```
+
+2. Setup local environment:
+
+```shell
+source Carla-Autoware-Bridge/setup-local-env.sh
+```
 #### Maps
 Autoware needs the maps in a special lanelet2 format, we will upload all converted maps in the future under the following link: [carla-autoware-bridge/maps](https://syncandshare.lrz.de/getlink/fiBgYSNkmsmRB28meoX3gZ/)
 
@@ -96,10 +111,15 @@ Additional information:
 - `-traffic_manager=False` to turn off traffic manager server (True by default)
 - `-tm_port=8000` to switch the traffic manager server port to a different one (8000 by default)
 
-If you want to spawn traffic run the following script inside the docker:
-```
+If you want to spawn traffic run the following script inside the docker (or in a local terminal for local execution):
+```shell
 python3 src/carla_autoware_bridge/utils/generate_traffic.py -p 1403
 ```
+To activate the third-view follower camera for CARLA:
+```shell
+python3 src/Carla-Autoware-Bridge/utils/thirdview_camera.py -p 1403
+```
+
 
 ### 3) Autoware
 To use Autoware some minor [adjustments](/doc/autoware-changes.md) are required. Additionally you will need our sensorkit and vehicle model.
